@@ -17,17 +17,17 @@ final slices = <SlideInfo>[
   const SlideInfo(
     'lorem10 ipsum dolor sit amet',
     'Ut officia velit nisi sint non cupidatat non.',
-    'assets/images/slide.jpg',
+    'assets/images/slide/slide1.jpg',
   ),
   const SlideInfo(
     'lorem ipsum dolor sit amet',
     'Et reprehenderit ipsum excepteur ea nisi consequat est labore.',
-    'assets/images/slide.jpg',
+    'assets/images/slide/slide1.jpg',
   ),
   const SlideInfo(
     'lorem ipsum dolor sit amet',
     'Laborum amet elit occaecat proident in eiusmod elit do aliqua id Lorem nostrud aliqua labore.',
-    'assets/images/slide.jpg',
+    'assets/images/slide/slide1.jpg',
   ),
 ];
 
