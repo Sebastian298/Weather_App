@@ -17,17 +17,17 @@ final slices = <SlideInfo>[
   const SlideInfo(
     'lorem10 ipsum dolor sit amet',
     'Dolor in commodo culpa magna laboris labore consequat. Sunt irure aliquip nulla ut amet duis voluptate deserunt. Incididunt elit veniam fugiat nulla occaecat magna pariatur. Officia minim elit pariatur veniam id dolor amet. Ea adipisicing aliquip excepteur occaecat dolore enim esse duis veniam. Aliqua et ea laboris voluptate ipsum aliquip adipisicing non non excepteur nisi.',
-    'assets/images/slide2.jpg',
+    'assets/images/slide1.jpg',
   ),
   const SlideInfo(
     'lorem ipsum dolor sit amet',
     'Laboris adipisicing aliquip amet aliqua laborum veniam commodo excepteur esse qui aliqua eiusmod. Ad in cupidatat proident id excepteur dolor in cillum sit laborum cillum incididunt id eiusmod. Sint proident laborum sint fugiat fugiat. Lorem duis eu sunt laborum esse quis in culpa pariatur veniam nostrud aliquip anim consectetur. Sint do adipisicing eu officia exercitation anim eu laborum.',
-    'assets/images/slide2.png',
+    'assets/images/slide2.jpg',
   ),
   const SlideInfo(
     'lorem ipsum dolor sit amet',
     'Eiusmod quis adipisicing elit officia adipisicing consequat fugiat. Do velit tempor incididunt ea adipisicing mollit. Qui dolore ex tempor eiusmod incididunt pariatur incididunt est aute ex cillum deserunt. Non elit ullamco ad nulla. Ex ipsum reprehenderit excepteur irure consectetur velit minim sint mollit sint laborum qui. Nisi esse laboris dolor magna consequat quis eiusmod dolore et duis aliqua. Proident Lorem aliqua pariatur id culpa.',
-    'assets/images/slide1.jpg',
+    'assets/images/slide3.jpg',
   ),
 ];
 
@@ -123,6 +123,8 @@ class _Slide extends StatelessWidget {
           Image(
             image: AssetImage(imageUrl),
             fit: BoxFit.cover,
+            height: 300,
+            width: 180,
           ),
           const SizedBox(height: 20),
           Text(
