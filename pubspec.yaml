@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   permission_handler: ^11.3.1
-  riverpod: ^2.5.1
+  flutter_riverpod: ^2.4.10
   sign_in_button: ^3.2.0
 
 dev_dependencies:
