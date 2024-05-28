@@ -1,5 +1,5 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:riverpod/riverpod.dart';
 
 final locationPermissionNotifier =
     StateNotifierProvider<LocationPermissionNotifier, LocationPermissionState>(
@@ -12,17 +12,32 @@ class LocationPermissionNotifier
   Future<void> requestPermission() async {
     final status = await Permission.location.status;
     if (status.isGranted) {
-      state = state.copyWith(isGranted: true);
+      state = state.copyWith(
+          isGranted: status.isGranted,
+          isDenied: status.isDenied,
+          isPermanentlyDenied: status.isPermanentlyDenied);
     } else if (status.isDenied) {
       final result = await Permission.location.request();
-      if (result.isGranted) {
-        state = state.copyWith(isGranted: true);
-      } else if (result.isPermanentlyDenied) {
-        state = state.copyWith(isPermanentlyDenied: true);
-      }
+      state = state.copyWith(
+        isGranted: result.isGranted,
+        isDenied: result.isDenied,
+        isPermanentlyDenied: result.isPermanentlyDenied,
+      );
     } else if (status.isPermanentlyDenied) {
-      state = state.copyWith(isPermanentlyDenied: true);
+      state = state.copyWith(
+        isPermanentlyDenied: true,
+        isDenied: false,
+        isGranted: false,
+      );
     }
+  }
+
+  Future<void> changeIsGranted() async {
+    state = state.copyWith(
+      isGranted: true,
+      isDenied: false,
+      isPermanentlyDenied: false,
+    );
   }
 }
 
@@ -51,9 +66,9 @@ class LocationPermissionState {
     bool? isPermanentlyDenied,
   }) {
     return LocationPermissionState(
-      isGranted: isGranted ?? this.isGranted,
-      isDenied: isDenied ?? this.isDenied,
-      isPermanentlyDenied: isPermanentlyDenied ?? this.isPermanentlyDenied,
+      isGranted: isGranted ?? false,
+      isDenied: isDenied ?? false,
+      isPermanentlyDenied: isPermanentlyDenied ?? false,
     );
   }
 }
